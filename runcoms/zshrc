@@ -12,12 +12,17 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# For Strg+Shift+t support
+if [[ $TERM == xterm-termite ]]; then
+  source "/etc/profile.d/vte.sh"
+fi
+
 # Customize to your needs...
 
 unsetopt sharehistory
 
-###-tns-completion-start-###
-if [ -f /home/lukas/.tnsrc ]; then 
-    source /home/lukas/.tnsrc 
-fi
-###-tns-completion-end-###
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
