@@ -10,6 +10,7 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN || -z "${TMPDIR}" ) && -s "${ZDOTDIR:-$HOME
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
+export JAVA_HOME=/opt/java/jdk
 export TERMINAL=termite
-export PATH=/home/lukas/anaconda3/bin:$PATH
+export PATH=$JAVA_HOME/bin:/home/lukas/.gem/ruby/2.4.0/bin:$PATH
 export LD_LIBRARY_PATH=/opt/cuda/lib64/:$LD_LIBRARY_PATH
